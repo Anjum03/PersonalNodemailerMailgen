@@ -6,11 +6,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const PORT = process.env.PORT || 9000;
 const cors = require('cors');
-const pug = require('pug');
-
-//db connect
-const connectDB = require('./db/conn');
-connectDB();
 
 
 //bodyParser connection
@@ -45,28 +40,9 @@ var corsOptionsDelegate = function (req, callback) {
   callback(null, corsOptions) // callback expects two parameters: error and options
 }
 
-const static_path = path.join(__dirname, "public")
-
-app.use(express.static(static_path));
-
-app.set("view engine", 'pug')
-
-const user = require("./route/useRoute");
-app.use("/", user);
-
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('contact.html')
 })
-
-// app.post('/register', (req,res)=>{
-//   console.log(req.body);
-//   const name = req.body.name;
-//   const email = req.body.email;
-//   const password = req.body.password;
-
-// res.redirect('/success')
-
-// })
 
 
 const nodemailer = require("nodemailer")
@@ -80,8 +56,8 @@ app.post('/register', (req, res) => {
   let config = {
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD
+      user: process.env.USEREMAIL,
+      pass: process.env.USERPASSWORD
     }
   }
   let transporter = nodemailer.createTransport(config);
@@ -107,8 +83,8 @@ app.post('/register', (req, res) => {
 
   //send email
   transporter.sendMail({
-    from: process.env.EMAIL,
-    to: req.body.email ,
+    from: req.body.email, // form email (client email)
+    to:`qamarkhan@namlsoft.com ` , //qamar sir(company email)
     subject: 'New User Registration',
     text: emailText,
     html: emailTemplate
@@ -120,25 +96,9 @@ app.post('/register', (req, res) => {
     }
   });
 
-
-
-
-
-
-
-
-
-  res.redirect('/success')
+  res.redirect('contact.html')
 
 })
-
-
-
-app.get('/success', (req, res) => {
-  res.render('success');
-});
-
-// app.get('/cancel', (req, res) => res.send('Cancelled'));
 
 
 

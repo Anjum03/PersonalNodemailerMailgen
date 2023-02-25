@@ -1,25 +1,28 @@
 {
-  "name": "email",
+  "name": "nodemailer",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000s\u0000e\u0000n\u0000d\u0000E\u0000m\u0000a\u0000i\u0000l\u0000\r\u0000 \u0000#\u0000 \u0000s\u0000e\u0000n\u0000d\u0000E\u0000m\u0000a\u0000i\u0000l\u0000\r\u0000 \u0000#\u0000 \u0000s\u0000e\u0000n\u0000d\u0000-\u0000E\u0000m\u0000a\u0000i\u0000l\u0000\r\u0000 \u0000#\u0000 \u0000e\u0000m\u0000a\u0000i\u0000l\u0000S\u0000e\u0000n\u0000d\u0000i\u0000n\u0000g\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anjum03/NodemailerCode.git"
   },
   "author": "Anjum Ansari",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anjum03/NodemailerCode/issues"
+  },
+  "homepage": "https://github.com/Anjum03/NodemailerCode#readme",
   "dependencies": {
-    "body-parser": "^1.20.1",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "firebase-admin": "^11.5.0",
     "mailgen": "^2.0.27",
-    "mongoose": "^6.9.2",
     "nodemailer": "^6.9.1",
-    "nodemon": "^2.0.20",
-    "path": "^0.12.7",
-    "pug": "^3.0.2"
+    "path": "^0.12.7"
   }
 }
