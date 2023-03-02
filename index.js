@@ -118,18 +118,18 @@ app.post('/register', (req, res) => {
     subject: 'New User Registration',
     text: emailText,
     html: emailTemplate
-  // }, 
-  // (error, info) => {
-  //   if (error) {
-  //     // alert("Email not Send");
-  //     // res.status(500).send('Email could not be sent');
-  //     console.log(error);
-  //   } else {
-  //     // res.status(200).send("Email sent Successfully");
-  //     // alert("Email Sent Successfull");
-  //     console.log('Email sent: ' + info.response);
+  }, 
+  (error, info) => {
+    if (error) {
+      alert("Email not Send");
+      // res.status(500).send('Email could not be sent');
+      console.log(error);
+    } else {
+      // res.status(200).send("Email sent Successfully");
+      alert("Email Sent Successfull");
+      console.log('Email sent: ' + info.response);
       
-  //   }
+    }
   });
 
   // res.redirect("contact.html")
