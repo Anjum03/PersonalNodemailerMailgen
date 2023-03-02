@@ -120,10 +120,12 @@ app.post('/register', (req, res) => {
     html: emailTemplate
   }, (error, info) => {
     if (error) {
-      res.status(500).send('Email could not be sent');
+      alert("Email not Send");
+      // res.status(500).send('Email could not be sent');
       console.log(error);
     } else {
-      res.status(200).send("Email sent Successfully")
+      // res.status(200).send("Email sent Successfully");
+      alert("Email Sent Successfull");
       console.log('Email sent: ' + info.response);
       
     }
