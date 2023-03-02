@@ -62,7 +62,7 @@ app.post('/register', (req, res) => {
   const message = req.body.message;
   const inlineRadio = req.body.inlineRadio;
   const number_screen = req.body.number_screen;
-  const approx_timeline = req.body.approx_timeline;
+  const timeline = req.body.timeline;
   const checkbox_feature = req.body.checkbox_feature
   const checkbox_language = req.body.checkbox_language
 
@@ -98,7 +98,7 @@ app.post('/register', (req, res) => {
             message:message,
             inlineRadio: inlineRadio,
             number_screen: number_screen,
-            approx_timeline:approx_timeline,
+            timeline:timeline,
             checkbox_feature:checkbox_feature,
             checkbox_language:checkbox_language
           
